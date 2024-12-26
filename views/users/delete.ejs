@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Usuário</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Usuário deletar</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">        
+            <p><b>ID:</b> <%= user.id %></p>
+            <p><b>Nome:</b> <%= user.name %></p>
+            <p><b>Apelido:</b> <%= user.username %></p>
+            <p><b>Data de Nascimento:</b> <%= user.birthDate %></p>
+            <p><b>Email:</b> <%= user.email %></p>
+            <p><b>Sexo:</b> <%= user.sex %></p>
+            <p><b>Administrador:</b> <%= user.administrator ? "Sim" : "Não" %></p>
+            <p><b>Estado:</b> <%= user.status %></p>
+            <p><b>Data Cadastro:</b> <%= user.createdAt %></p>
+            <p><b>Data da Última Atualização:</b> <%= user.updatedAt || "Nenhuma atualização realizada." %></p>      
+        </div>
+
+        <form method="post" action="/usuarios/deletar/<%= user.id %>">
+            <input type="submit" value="Confirmar Deleção">
+        </form>
+    </main>
+    <footer>
+        <div class="container">
+          <h3> <p>&copy;2024 Caragua. na crista da onda</p></h3>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Usuários</title>
+</head>
+<body>
+    <table border>
+        <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Apelido</th>
+            <th>Data de Nascimento</th>
+            <th>Email</th>
+            <th>Sexo</th>
+            <th>Administrador</th>
+            <th>Estado</th>
+            <th>Data Cadastro</th>
+            <th>Data da Última Atualização</th>
+            <th>Ações</th>
+        </thead>
+        <tbody>
+            <% for (const user of users) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.nickname %></td>
+                    <td><%= user.birthDate %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.sex %></td>
+                    <td><%= user.administrator ? "Sim" : "Não" %></td>
+                    <td><%= user.status %></td>
+                    <td><%= user.createdAt %></td>
+                    <td><%= user.updatedAt %></td>
+                    <td>
+                        <ul>
+                            <li><a href="/usuarios/atualizar/<%= user.id %>">Atualizar</a></li>
+                            <li><a href="/usuarios/deletar/<%= user.id %>">Deletar</a></li>
+                            <li><a href="/usuarios/exibir/<%= user.id %>">Exibir</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/usuarios/cadastrar">Cadastrar Usuário</a>
+    </p>
+    <footer>
+        <div class="container">
+          <h3> <p>&copy;2024 Caragua. na crista da onda</p></h3>
+        </div>
+    </footer>
+</body>
+</html>

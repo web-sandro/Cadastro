@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body style="margin-left: 10px;">
+    <h1>Caragua. na crista da onda</h1>
+    <h1><%= user.username %></h1>
+    
+    <textarea id="textiaria" style="text-align:left ; margin-left: 0px 0;
+    width: 450px;
+    height: 100px">
+    <% for (const mensagem of mensagens) { %>
+        <%= mensagem.content %>
+    <% } %></textarea>
+
+    <form action="/pratica" method="post">
+        <form id="meuFormulario">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem"></textarea><br>
+
+            <input type="hidden" name="user_id" id="user_id" value="<%= user_id %>">
+
+        
+            <input type="submit" value="Enviar">
+        </form>
+        
+        <ul>
+            <li><a href="/usuarios">
+                    <h1>Lista de Usuários&nbsp;👨</h1>
+                </a></li>
+            <li><a href="/usuarios/cadastrar">
+                    <h1>Cadastrar Usuário&nbsp;🔠</h1>
+                </a></li>
+            <li><a href="/usuarios/atualizar/<%= user.id %>">
+                    <h1>Atualizar Usuário &nbsp;🔄</h1>
+                </a></li>
+            <li><a href="/autenticacao/login">
+                    <h1>Entrtar &nbsp;👽</h1>
+                </a></li>
+            <li><a href="/">
+                    <h1> Sair&nbsp;👋</h1>
+                </a></li>
+        </ul>
+
+
+
+        <script src="/javascripts/javatextiaria.js"></script>
+</body>
+
+</html>

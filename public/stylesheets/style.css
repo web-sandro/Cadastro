@@ -4,8 +4,39 @@
     margin-right: auto;
 }
 
+
+.container-header {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 header {
     margin-bottom: 30px;
+}
+
+.container-main {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entrar {
+    display: flex;
+    align-items: center;
+    font: 2em sans-serif;
+    color: #0c0c0c;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.cadastrar {
+    display: flex;
+    align-items: center;
+    font: 2em sans-serif;
+    color: #0c0c0c;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 #login {
@@ -70,17 +101,14 @@ header {
     cursor: pointer;
 }
 
-.card-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.card-footer a {
-    border-radius: 5px;
+.submit:hover {
     border: 1px solid #0c0c0c;
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
+    background-color: #7cee30;
+    color: #0c0c0c;
+    width: 90px;
+    height: 45px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .password-container {
@@ -105,41 +133,7 @@ header {
   
   .password-icon:hover {
     color: #000;
-  }
-
-  .card-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.card-footer a {
-    border-radius: 5px;
-    border: 1px solid #0c0c0c;
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-}
-
-
-.submit {
-    border: 1px solid #0c0c0c;
-    background-color: #fff;
-    color: #0c0c0c;
-    width: 90px;
-    height: 45px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.submit:hover {
-    border: 1px solid #0c0c0c;
-    background-color: #7cee30;
-    color: #0c0c0c;
-    width: 90px;
-    height: 45px;
-    border-radius: 4px;
-    cursor: pointer;
-}  
+  }  
 
 input[type="text"],
 input[type="password"],
@@ -157,4 +151,62 @@ select {
     background: #ddecdf;
     font-size: 8px;
     border-radius: 50px;
+}
+
+.main-logout {
+    display: flex;
+    align-items: center;
+    color: #0c0c0c;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.sair {
+    display: flex;
+    align-items: center;
+    font: 1.5em sans-serif;
+    color: #0c0c0c;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    font: 2em sans-serif;
+    color: #0c0c0c;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+  .container-footer {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .card-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card-footer a {
+    border-radius: 5px;
+    border: 1px solid #0c0c0c;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.card-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card-footer a {
+    border-radius: 5px;
+    border: 1px solid #0c0c0c;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
 }

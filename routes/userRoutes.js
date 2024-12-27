@@ -16,17 +16,5 @@ router.post('/atualizar/:id', userController.edit);
 router.get('/deletar/:id', userController.deleteForm);
 router.post('/deletar/:id', userController.delete);
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    console.log("filename app.js");   
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) { 
-    console.log("filename app.js");   
-    cb(null, file.originalname);
-  },
-});
-
-const upload = multer({ storage: storage });
 
 module.exports = router;

@@ -8,22 +8,26 @@
 </head>
 <body>
   <header>
-     <h1>Perfil do Usuário</h1>
+     <div class="container-header">
+          <h1>Caragua. na crista da onda</h1>
+     </div>
   </header>
   <main>
-    <h2>Bem-vindo, <%= usuario.nome %></h2>
-    <p>Apelido: <%= usuario.apelido %></p>
-    <p>Data de Nascimento: <%= usuario.dataNascimento %></p>
-    <p>Email: <%= usuario.email %></p>
-    <p>Sexo: <%= usuario.sexo %></p>
-    <p>Administrador: <%= usuario.administrador ? 'Sim' : 'Não' %></p>
-    <p>Estado: <%= usuario.estado %></p>
-    <form method="POST" action="/usuarios/perfil/<%= usuario.id %>?_method=DELETE">
-      <button type="submit">Deletar Perfil</button>
-    </form>
+    <div class="container-main">
+      <h2>Bem-vindo, <%= usuario.nome %></h2>
+      <p>Apelido: <%= usuario.apelido %></p>
+      <p>Data de Nascimento: <%= usuario.dataNascimento %></p>
+      <p>Email: <%= usuario.email %></p>
+      <p>Sexo: <%= usuario.sexo %></p>
+      <p>Administrador: <%= usuario.administrador ? 'Sim' : 'Não' %></p>
+      <p>Estado: <%= usuario.estado %></p>
+      <form method="POST" action="/usuarios/perfil/<%= usuario.id %>?_method=DELETE">
+        <button type="submit">Deletar Perfil</button>
+      </form>
+    </div>
   </main>
   <footer>
-    <div class="container">
+    <div class="container-footer">
       <h3> <p>&copy;2025 Caragua. na crista da onda</p></h3>
     </div>
 </footer>

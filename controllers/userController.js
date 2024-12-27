@@ -139,7 +139,7 @@ class UserController {
         return res.status(404).render('404.ejs');
       }
 
-      res.redirect('/create-user');
+      res.redirect('/autenticacao/create-user');
     } catch (error) {
       return res.status(500).render('error.ejs', { error });
     }

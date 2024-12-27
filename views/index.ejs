@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyApp</title>
     <link rel="stylesheet" href="stylesheets/style.css">
-
 </head>
 
 <body>
@@ -18,25 +17,26 @@
     </header>
     <main>
         <div class="container">
-        <% if (user) { %>
-            <h1>Bem-vindo, <%= user.username %>!</h1>
-            <form action="/autenticacao/logout" method="POST">
-                <input type="submit" value="Sair">
-            </form>
-            <% } else { %>
-                <p>
-                    <a href="/autenticacao/login">Entrar</a>
-                </p>
-                <p>
-                    <a href="/autenticacao/create-user">Cadastrar</a>
-                </p>
+            <% if (user) { %>
+                <h1>Bem-vindo, <%= user.username %>!</h1>
+                <form action="/autenticacao/logout" method="POST">
+                    <input type="submit" value="Sair">
+                    <li><a href="/usuarios/deletar/<%= user.id %>">Deletar</a></li>
+                </form>
+                <% } else { %>
+                    <p>
+                        <a href="/autenticacao/login">Entrar</a>
+                    </p>
+                    <p>
+                        <a href="/autenticacao/create-user">Cadastrar</a>
+                    </p>
 
-                <% } %>
+                    <% } %>
         </div>
     </main>
     <footer>
         <div class="container">
-            <h3> <p>&copy;2024 Caragua. na crista da onda</p></h3>
+            <h3> <p>&copy;2025 Caragua. na crista da onda</p></h3>
         </div>
     </footer>
 </body>

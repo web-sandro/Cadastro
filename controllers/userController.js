@@ -67,8 +67,7 @@ class UserController {
 
       res.redirect(`/usuarios/exibir/${insertedUserId}`);
     } catch (error) {
-      console.log(error);
-      return res.status(500).render('error.ejs', { error });
+      return res.status(500).render('error_cadastro.ejs', { error });
     }
   }
   static async editForm(req, res) {
@@ -140,7 +139,7 @@ class UserController {
         return res.status(404).render('404.ejs');
       }
 
-      res.redirect('/usuarios');
+      res.redirect('/create-user');
     } catch (error) {
       return res.status(500).render('error.ejs', { error });
     }

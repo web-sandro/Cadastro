@@ -1,6 +1,7 @@
 const pool = require('../config/dbConfig');
 const nodemailer = require('nodemailer');
 const passwordService = require('../services/passwordService');
+const { render } = require('ejs');
 
 class UserModel {
     constructor({
@@ -28,24 +29,35 @@ class UserModel {
     }
 
     async create() {
-        try {
+        
             const usernameExists = await this.usernameExists(this.username);
             if (usernameExists) {
-                throw new Error('Este username já está cadastrado.');
+                throw new Error('Este nome de usuário já está cadastrado,');
             }
+
+            const emailExists = await this.emailExists(this.email);
+            if (emailExists) {
+              throw new Error('Este email já está cadastrado,');
+            
+            }
+
             const hashedPassword = await passwordService.hashPassword(this.password);
             const sql = 'INSERT INTO user (name, username, birthDate, password, email, sex, status, photo, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
             const values = [this.name, this.username, this.birthDate, hashedPassword, this.email, this.sex, this.status, this.photo, this.createdAt, this.updatedAt];
             const [rows, fields] = await pool.query(sql, values);
             return rows.insertId;
-        } catch (error) {
-            return 404;
-
-        }
-    }
+    }   
+        
     async usernameExists(username) {
         const sql = 'SELECT COUNT(*) as count FROM user WHERE username = ?';
         const [rows] = await pool.query(sql, [username]);
+        const count = rows[0].count;
+        return count > 0;
+    }
+
+    async emailExists(email) {
+        const sql = 'SELECT COUNT(*) as count FROM user WHERE email = ?';
+        const [rows] = await pool.query(sql, [email]);
         const count = rows[0].count;
         return count > 0;
     }

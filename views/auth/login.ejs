@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-
-    <body>
-        <header>
-            <div class="container-header">
-                <h1>Caragua. na crista da onda</h1>
-            </div>
-        </header>
-        <main>
-          <div class="container-main">
-            <div id="login">
-              <div class="log">
-                <div class="mensagem-login">
-                  <h1><% if (locals.errorMessage) { %>
-                    <p class="error-message"><%= errorMessage %></p>
-                    <% } %></h1>
-                </div>
-                <form action="/autenticacao/login" method="post" class="card">                 
-                  <div class="card-content">
-                    <div class="card-content-area">
-                      <label for="usuario">Usuário</label>
-                      <input type="text" id="usuario" name="usernameOrEmail" autocomplete="off" required/>
-                    </div>
-                    <div class="card-content-area">
-                      <label for="password">Senha</label>
-                      <div class="password-container">
-                        <input type="password" id="password" name="password" oninput="validatePassword()" required />
-                        <i class="password-icon toggle-password" onclick="togglePasswordVisibility('password')">👁️</i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <input type="submit" value="Login" class="submit" />
-                  </div>
-                  <div class="card-footer">
-                    <a href="/autenticacao/forgot-password">Esqueceu a senha?</a>
-                  </div>
-                </form>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Entrar</title>
+      <link rel="stylesheet" href="/stylesheets/style.css">
+   </head>
+   <body>
+      <header>
+          <div class="container-header">
+              <h1>Caragua. na crista da onda</h1>
+          </div>
+      </header>
+      <main>
+        <div class="container-main">
+          <div id="login">
+            <div class="log">
+              <div class="mensagem-login">
+                <h1><% if (locals.errorMessage) { %>
+                  <p class="error-message"><%= errorMessage %></p>
+                  <% } %></h1>
               </div>
+              <form action="/autenticacao/login" method="post" class="card">                 
+                <div class="card-content">
+                  <div class="card-content-area">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" name="usernameOrEmail" autocomplete="off" required/>
+                  </div>
+                  <div class="card-content-area">
+                    <label for="password">Senha</label>
+                    <div class="password-container">
+                      <input type="password" id="password" name="password" oninput="validatePassword()" required />
+                      <i class="password-icon toggle-password" onclick="togglePasswordVisibility('password')">👁️</i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <input type="submit" value="Login" class="submit" />
+                </div>
+                <div class="card-footer">
+                  <a href="/autenticacao/forgot-password">Esqueceu a senha?</a>
+                </div>
+              </form>
             </div>
-            <script src="/js/script.js"></script>
           </div>
-        </main>
-        <footer>
-          <div class="container-footer">
-            <h3> <p>&copy;2025 Caragua. na crista da onda</p></h3>
-          </div>
-        </footer>
-      </body>
+          <script src="/js/script.js"></script>
+        </div>
+      </main>
+      <footer>
+        <div class="container-footer">
+          <h3> <p>&copy;2025 Caragua. na crista da onda</p></h3>
+        </div>
+      </footer>
+   </body>
 </html>

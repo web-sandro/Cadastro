@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Index</title>
-</head>
-
-<body>
-    <header>
-        <div class="container-header">
-            <h1>Caragua. na crista da onda</h1>
-        </div>
-    </header>
-    <main>
-        <div class="container-main">
-            <% if (user) { %>
-                <h1>Bem-vindo, <%= user.username %>!</h1>
-                <form action="/autenticacao/logout" method="POST">
-                    <div class="container-logout">
-                        <div class="sair">
-                            <p>
-                                <input class="sair" type="submit" value="Sair">
-                            </p>
-                        </div>
-                        <div class="delete">
-                            <p>
-                                <a href="/usuarios/deletar/<%= user.id %>">Deletar</a>
-                            </p>
-                        </div>
-                </div>
-                </form>
-                <% } else { %>
-                    <div class="container-login">
-                        <div class="entrar">
-                            <p>
-                                <a href="/autenticacao/login">Entrar</a>
-                            </p>
-                        </div>
-                        <div class="cadastrar">
-                            <p>
-                                <a href="/autenticacao/create-user">Cadastrar</a>
-                            </p>
-                        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <title>Index</title>
+    </head>
+    <body>
+        <header>
+            <div class="container-header">
+                <h1>Caragua. na crista da onda</h1>
+            </div>
+        </header>
+        <main>
+            <div class="container-main">
+                <% if (user) { %>
+                    <h1>Bem-vindo, <%= user.username %>!</h1>
+                    <form action="/autenticacao/logout" method="POST">
+                        <div class="container-logout">
+                            <div class="sair">
+                                <p>
+                                    <input class="sair" type="submit" value="Sair">
+                                </p>
+                            </div>
+                            <div class="delete">
+                                <p>
+                                    <a href="/usuarios/deletar/<%= user.id %>">Excluir conta</a>
+                                </p>
+                            </div>
                     </div>
-            <% } %>
-        </div>
-    </main>
-    
-    <footer>
-        <div class="container-footer">
-          <h3><p>&copy;2025 Caragua. na crista da onda</p></h3>
-        </div>
-    </footer>
-</body>
-
+                    </form>
+                    <% } else { %>
+                        <div class="container-login">
+                            <div class="entrar">
+                                <p>
+                                    <a href="/autenticacao/login">Entrar</a>
+                                </p>
+                            </div>
+                            <div class="cadastrar">
+                                <p>
+                                    <a href="/autenticacao/create-user">Cadastrar</a>
+                                </p>
+                            </div>
+                        </div>
+                <% } %>
+            </div>
+        </main> 
+        <footer>
+            <div class="container-footer">
+            <h3><p>&copy;2025 Caragua. na crista da onda</p></h3>
+            </div>
+        </footer>
+    </body>
 </html>

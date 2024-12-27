@@ -190,13 +190,17 @@ class AuthController {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: { 
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+            // user: process.env.EMAIL_USER,
+            // pass: process.env.EMAIL_PASS,
+
+            user: 'litoralnortesoftware@gmail.com',
+            pass:'vjrv xojd besf hwym',
         },
     });
 
     const mailOptions = {
-        from:  process.env.EMAIL_USER,
+        // from:  process.env.EMAIL_USER,
+        from:  'litoralnortesoftware@gmail.com',
         to: email, 
         subject: 'Confirmação de Cadastro',
         html: `
